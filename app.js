@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const _ = require('lodash');
 const mongoose = require('mongoose');
 //connection to database
-mongoose.connect('mongodb://localhost:27017/blogDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://admin:1234@cluster0.ojqgc.mongodb.net/blogdb?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
 
@@ -40,7 +40,7 @@ app.get("/", function (req, res) {
     //get the values from the database and put it into the list
     Article.find(function (err, articles) {
         if (err) {
-            handleError(err);
+            console.log(err);
         }
         else {
             let contenu = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, molestias voluptate cumque,sint quod voluptatum explicabo harum laudantium hic facilis aliquid!    Laudantium facilis, assumenda quas animi blanditiis ipsa earum rem.';
@@ -91,7 +91,7 @@ app.post("/compose", function (req, res) {
     });
     newArticle.save(function (err) {
         if (err) {
-            handleError(err);
+            console.log(err);
         } else {
             res.redirect('/compose');
             console.log("Enregistrer avec succès !");
