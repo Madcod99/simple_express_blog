@@ -117,6 +117,10 @@ app.get("/posts/:postname", function (req, res) {
 });
 
 
-app.listen(process.env.PORT, function () {
-    console.log("server started on port " + process.env.PORT);
+let port = process.env.PORT;
+if(port == null || port == ""){
+    port=8000;
+}
+app.listen(port, function () {
+    console.log("server started successfully");
 });

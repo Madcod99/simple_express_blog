@@ -8,6 +8,9 @@
   },
   "author": "konaté samir",
   "license": "ISC",
+  "engines": {
+    "node": "15.4.0"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "ejs": "^3.1.5",
@@ -15,7 +18,5 @@
     "lodash": "^4.17.20",
     "mongoose": "^5.11.11"
   },
-  "engines": {
-    "node": "3.x"
-  }
+  
 }
