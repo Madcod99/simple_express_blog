@@ -1,0 +1,45 @@
+<%-  include('template/header'); %>
+
+<header class="masthead" style="background-image: url('img/compose.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Créer un article</h1>
+                    <!-- <span class="subheading">Une idée, un projet, des conseils, une seule adresse</span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Bienvenue</h1>
+    <br>
+    <hr>
+    <br>
+    <form action="/compose" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Titre</label>
+            <input type="text" name="titre" class="form-control" id="title">
+        </div>
+        <div class="mb-3">
+            <label for="articlecontent" class="form-label">Contenu</label>
+            <textarea type="text" name="content" class="form-control" id="articlecontent" aria-multiline="true"
+                rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="auteur" class="form-label">Auteur</label>
+            <input type="text" name="auteur" class="form-control" id="title">
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" name="date" class="form-control" id="title">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">créer l'article</button>
+    </form>
+
+</div>
+<%-  include('template/footer'); %>

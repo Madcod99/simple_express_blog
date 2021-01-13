@@ -1,0 +1,42 @@
+<%- include('template/header'); -%>
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Le Blog de Samir</h1>
+                    <span class="subheading">Mon blog personnel où je raconte mes aventures dans ce monde de fou</span>
+                </div>
+            </div>
+        </div>
+    </div> 
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <% articles.forEach(function(article){ %> 
+                <div class="post-preview">
+                    <h1 class="post-title">
+                        <%= article.titre %>
+                    </h1>
+                    <p class="post-subtitle">
+                        <%= article.content.substring(0, 100) + ' ...' %> <a href="/posts/<%= article._id %>">Read more</a>
+                    </p>
+                    <p class="post-meta"> Poster par <span> <%= article.auteur %>  </span> le <%= article.date %>  </p>
+                </div>
+                <hr>
+            <% }) %> 
+           
+            <!-- Pager -->
+            <!-- <div class="clearfix">
+                <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+            </div> -->
+        </div>
+    </div>
+</div>
+<hr>
+<%- include('template/footer'); -%>

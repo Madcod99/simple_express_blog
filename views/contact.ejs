@@ -1,0 +1,70 @@
+<%- include('template/header'); %> 
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/contact-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1>Contacter Moi</h1>
+          <span class="subheading">Une idée, un projet, des conseils, une seule adresse</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as
+        possible!</p>
+      <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+      <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+      <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+      <form name="sentMessage" id="contactForm" novalidate action="/contact" method="POST">
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Nom</label>
+            <input type="text" class="form-control" placeholder="Nom" id="name" name="nom" required
+              data-validation-required-message="entrez votre nom.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" id="email" name="email" required
+              data-validation-required-message="Entrez une adresse mail ×.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Téléphone</label>
+            <input type="tel" class="form-control" placeholder="Téléphone" id="phone" name="telephone" required
+              data-validation-required-message="Entrez un numéro de téléphone sinon comment je vous appel.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Votre message</label>
+            <textarea rows="5" class="form-control" placeholder="Message" id="message" name="message" required
+              data-validation-required-message="entrez un message s'il vous plait."></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-primary" id="sendMessageButton">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<%- include('template/footer'); %> 
