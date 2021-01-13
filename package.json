@@ -4,7 +4,7 @@
   "description": "this is a simple blog website",
   "main": "app.js",
   "scripts": {
-    "start" : "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
   },
   "author": "konaté samir",
   "license": "ISC",
@@ -14,5 +14,8 @@
     "express": "^4.17.1",
     "lodash": "^4.17.20",
     "mongoose": "^5.11.11"
+  },
+  "engines": {
+    "node": "3.x"
   }
 }

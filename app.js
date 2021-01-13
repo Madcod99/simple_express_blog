@@ -117,6 +117,6 @@ app.get("/posts/:postname", function (req, res) {
 });
 
 
-app.listen(3000, function () {
-    console.log("server started on port 3000");
+app.listen(process.env.PORT, function () {
+    console.log("server started on port " + process.env.PORT);
 });
