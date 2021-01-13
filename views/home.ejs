@@ -21,7 +21,7 @@
             <% articles.forEach(function(article){ %> 
                 <div class="post-preview">
                     <h1 class="post-title">
-                        <%= article.titre %>
+                        <%= article.title %>
                     </h1>
                     <p class="post-subtitle">
                         <%= article.content.substring(0, 100) + ' ...' %> <a href="/posts/<%= article._id %>">Read more</a>
