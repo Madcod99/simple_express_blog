@@ -5,6 +5,11 @@ const mongoose = require('mongoose');
 //connection to database
 mongoose.connect('mongodb+srv://admin:1234@cluster0.ojqgc.mongodb.net/blogdb?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
+const fonction  = require("./models/article");
+
+console.log(fonction.bonsoir("MOHAMED"));;
+
+
 const app = express();
 
 //definition of my schema 
@@ -91,7 +96,7 @@ app.post("/compose", function (req, res) {
     });
     newArticle.save(function (err) {
         if (err) {
-            console.log(err);
+            // console.log(err);
         } else {
             res.redirect('/compose');
             console.log("Enregistrer avec succès !");
@@ -116,6 +121,10 @@ app.get("/posts/:postname", function (req, res) {
     });
 });
 
+process.on("exit", function(){
+    console.log("bye le programme se ferme");
+})
+
 
 let port = process.env.PORT;
 if(port == null || port == ""){
@@ -123,4 +132,5 @@ if(port == null || port == ""){
 }
 app.listen(port, function () {
     console.log("server started successfully");
+    // console.log(process.env);
 });
